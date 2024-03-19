@@ -20,14 +20,20 @@
             <th>Date/Time</th>
             <th>Description</th>
             <th>Calories</th>
+            <th></th>
+            <th></th>
         </tr>
-        <c:forEach var="meal" items="${meallist}">
+        <c:forEach var="meal" items="${mealList}">
             <tr class="${meal.excess ? 'red' : 'green'}">
                 <td>${meal.dateTimeNormalized}</td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
+                <td><a href="meals?action=edit&mealId=<c:out value="${meal.id}"/>">Update</a></td>
+                <td><a href="meals?action=delete&mealId=<c:out value="${meal.id}"/>">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
+    <h3>Add meal</h3>
+    <p><a href="meals?action=insert">Add meal</a></p>
 </body>
 </html>
