@@ -24,7 +24,8 @@
             <th></th>
         </tr>
         <c:forEach var="meal" items="${mealList}">
-            <tr class="${meal.excess ? 'red' : 'green'}">
+            <jsp:useBean id="meal" type="ru.javawebinar.topjava.model.MealTo"/>
+                <tr class="${meal.excess ? 'red' : 'green'}">
                 <td>${meal.dateTimeNormalized}</td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
